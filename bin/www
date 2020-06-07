@@ -1,0 +1,9 @@
+const app = require("../src/app");
+
+const PORT = process.env.PORT || process.env.SERVER_PORT || 8080;
+
+var server = app.listen(PORT, function () {
+        console.log(`Server is ready and listening on port ${PORT}`);
+    });
+
+module.exports = app;

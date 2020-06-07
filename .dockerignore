@@ -1,0 +1,12 @@
+mongo_volume
+node_modules
+npm-debug.log
+Dockerfile*
+docker-compose*
+.gitmodules
+.dockerignore
+.git
+.gitignore
+README.md
+LICENSE
+.vscode

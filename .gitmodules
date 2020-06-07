@@ -1,0 +1,3 @@
+[submodule "public"]
+	path = public
+	url = https://github.com/ghgh3099/location-finder-front-end.git

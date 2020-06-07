@@ -1,0 +1,35 @@
+version: '3'
+
+services:
+  web-server:
+    build: .
+    volumes:
+      - .:/usr/src/app
+      - node_libs:/usr/src/app/node_modules
+    ports:
+      - 3000:3000
+    command: npm start
+    depends_on:
+      - mongo
+    healthcheck:
+      disable: true
+
+  mongo:
+    image: mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=root
+      - MONGO_INITDB_ROOT_PASSWORD=example
+      - MONGO_INITDB_DATABASE=locations
+    healthcheck:
+      test: "[ `echo 'db.runCommand(\"ping\").ok' | mongo localhost/example-database --quiet` ] && echo 0 || echo 1"
+      interval: 5s
+      timeout: 4s
+      retries: 3
+
+volumes:
+  node_libs:
+  mongo-data:
