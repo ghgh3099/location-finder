@@ -9,8 +9,8 @@ const M_PASSWORD = config.mongo.pass;
 const M_AUTHSOURCE = config.mongo.authSource
 
 // const uri = `mongodb://${M_HOST}:${M_PORT}/${M_DBNAME}`;
-// const uri = `mongodb://${M_HOST}:${M_PORT}/${M_DBNAME}`;
-const uri = `mongodb+srv://${M_USERNAME}:${M_PASSWORD}@${M_HOST}/${M_DBNAME}?retryWrites=true&w=majority`;
+const uri = `mongodb://${M_HOST}:${M_PORT}/${M_DBNAME}`;
+// const uri = `mongodb+srv://${M_USERNAME}:${M_PASSWORD}@${M_HOST}/${M_DBNAME}?retryWrites=true&w=majority`;
 const mongooseOptions = {
         useNewUrlParser: true,
         authSource: M_AUTHSOURCE,
